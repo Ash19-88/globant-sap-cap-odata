@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/globant-logo.png" alt="Globant Logo" width="250"/>
+  <img src="assets/Globant-logo.png" alt="Globant Logo" width="250"/>
 </p>
 
   <img src="assets/SAP-logo.png" alt="Globant Logo" width="100"/>

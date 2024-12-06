@@ -1,0 +1,27 @@
+### You can use tools such as Postman, Thunder Client, Insomnia or any other API testing tool to run the requests.
+
+@baseUrl = https://services.odata.org/northwind/northwind.svc
+
+### Metadata
+GET {{baseUrl}}/$metadata
+
+### Retrieve orders with customer details.
+GET {{baseUrl}}/Orders?$expand=Customer&$format=json
+
+### Retrieve employees who report to the manager with ID "2".
+GET {{baseUrl}}/Employees?$filter=ReportsTo eq 2&$format=json
+
+### Retrieve products that are in stock (inventory).
+GET {{baseUrl}}/Products?filter=UnitsInStock gt 0&$format=json
+
+### Retrieve only the names and codes of products that are NOT in stock.
+GET {{baseUrl}}/Products?$filter=UnitsInStock eq 0&$select=ProductName,ProductID,UnitsInStock&$format=json
+
+### Retrieve the 5 most expensive products.
+GET {{baseUrl}}/Products?$orderby=UnitPrice desc&$top=5&$format=json
+
+### Find orders that were shipped to "Germany".
+GET {{baseUrl}}/Orders?$filter=ShipCountry eq 'Germany'&$format=json
+
+### Retrieve only the names and prices of products in the "Beverages" category.
+GET {{baseUrl}}/Products?$filter=CategoryID eq 1&$select=ProductName,UnitPrice,CategoryID&$format=json
